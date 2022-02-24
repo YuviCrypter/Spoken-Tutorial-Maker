@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Preview</title>
+    <style>
+    *{
+    margin: 0;
+    padding: 0;
+    
+    }  
+    body{
+      background-image: linear-gradient(41deg, rgba(107, 107, 107, 0.04) 0%, rgba(107, 107, 107, 0.04) 8%,rgba(31, 31, 31, 0.04) 8%, rgba(31, 31, 31, 0.04) 100%),linear-gradient(9deg, rgba(228, 228, 228, 0.04) 0%, rgba(228, 228, 228, 0.04) 62%,rgba(54, 54, 54, 0.04) 62%, rgba(54, 54, 54, 0.04) 100%),linear-gradient(124deg, rgba(18, 18, 18, 0.04) 0%, rgba(18, 18, 18, 0.04) 37%,rgba(233, 233, 233, 0.04) 37%, rgba(233, 233, 233, 0.04) 100%),linear-gradient(253deg, rgba(201, 201, 201, 0.04) 0%, rgba(201, 201, 201, 0.04) 55%,rgba(47, 47, 47, 0.04) 55%, rgba(47, 47, 47, 0.04) 100%),linear-gradient(270deg, rgba(172, 172, 172, 0.04) 0%, rgba(172, 172, 172, 0.04) 33%,rgba(26, 26, 26, 0.04) 33%, rgba(26, 26, 26, 0.04) 100%),linear-gradient(64deg, rgba(11, 11, 11, 0.04) 0%, rgba(11, 11, 11, 0.04) 38%,rgba(87, 87, 87, 0.04) 38%, rgba(87, 87, 87, 0.04) 100%),linear-gradient(347deg, rgba(199, 199, 199, 0.04) 0%, rgba(199, 199, 199, 0.04) 69%,rgba(4, 4, 4, 0.04) 69%, rgba(4, 4, 4, 0.04) 100%),linear-gradient(313deg, rgba(36, 36, 36, 0.04) 0%, rgba(36, 36, 36, 0.04) 20%,rgba(91, 91, 91, 0.04) 20%, rgba(91, 91, 91, 0.04) 100%),linear-gradient(90deg, #060940,#3345A6);
+      /* background-image: linear-gradient(to right,#060940,#3345A6 25% 75%,#060940); */
+    } 
+    .video{
+      height: fit-content;
+      min-height: 500px;
+      margin: 40px;
+      width: fit-content;
+      border: 2px solid black;
+      box-shadow: 3px 3px 7px black;
+    }
+    .text{
+      text-shadow: 3px 3px 5px black;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+<script> var myvideo = document.getElementById("myvideo")
+    myvideo.load()
+</script>
+<center>
+<div class="video">
+  <video id="myvideo" controls preload="auto" width="800" height="500"
+  src="../../files/output.mp4" type='video/mp4'></video>
+</div>
+<div class="text">
+<p><b>Download the video by clicking the three dots and 'Download'</b></p>
+</div>
+</center>
+</body>
+</html>

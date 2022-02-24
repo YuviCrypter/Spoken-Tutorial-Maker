@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Upload</title>
+<link href="https://vjs.zencdn.net/7.17.0/video-js.css" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300&family=Staatliches&display=swap" rel="stylesheet">
+<style>
+    *{
+    margin: 0;
+    padding: 0;
+}
+.top{
+    height: 40vh;
+    width:auto;
+    /* background-image: linear-gradient(#F2CFBB,#BF826B); */
+    background-image: linear-gradient(216deg, rgba(77, 77, 77,0.05) 0%, rgba(77, 77, 77,0.05) 25%,rgba(42, 42, 42,0.05) 25%, rgba(42, 42, 42,0.05) 38%,rgba(223, 223, 223,0.05) 38%, rgba(223, 223, 223,0.05) 75%,rgba(36, 36, 36,0.05) 75%, rgba(36, 36, 36,0.05) 100%),linear-gradient(44deg, rgba(128, 128, 128,0.05) 0%, rgba(128, 128, 128,0.05) 34%,rgba(212, 212, 212,0.05) 34%, rgba(212, 212, 212,0.05) 57%,rgba(25, 25, 25,0.05) 57%, rgba(25, 25, 25,0.05) 89%,rgba(135, 135, 135,0.05) 89%, rgba(135, 135, 135,0.05) 100%),linear-gradient(241deg, rgba(55, 55, 55,0.05) 0%, rgba(55, 55, 55,0.05) 14%,rgba(209, 209, 209,0.05) 14%, rgba(209, 209, 209,0.05) 60%,rgba(245, 245, 245,0.05) 60%, rgba(245, 245, 245,0.05) 69%,rgba(164, 164, 164,0.05) 69%, rgba(164, 164, 164,0.05) 100%),linear-gradient(249deg, rgba(248, 248, 248,0.05) 0%, rgba(248, 248, 248,0.05) 32%,rgba(148, 148, 148,0.05) 32%, rgba(148, 148, 148,0.05) 35%,rgba(202, 202, 202,0.05) 35%, rgba(202, 202, 202,0.05) 51%,rgba(181, 181, 181,0.05) 51%, rgba(181, 181, 181,0.05) 100%),linear-gradient(45deg, #BF826B ,#F2CFBB);
+    
+    border-width: 0px;
+    border-bottom-width: 5px;
+    border-style: solid;
+    border-bottom-color: #010326;
+}
+.bottom{
+    display: inline;
+    background-image: radial-gradient(rgb(235, 235, 235) 70%,rgb(186, 186, 186));
+    height: 100vh;
+}
+.Header{
+    height: 12vh;
+    text-align: center;
+    transform: translateY(110%);
+    color: #010326;
+    font-family: 'Staatliches', cursive;
+    font-size: 6vw;
+    text-shadow: 3px 3px 5px white;
+    transition: 1s;
+    
+}
+.Header:hover{
+    height: 12vh;
+    text-align: center;
+    transform: translateY(100%);
+    color:#af1616;
+    font-family: 'Staatliches', cursive;
+    font-size: 6vw;
+    text-shadow: 10px 10px 5px black;
+    
+}
+.textupload{
+    height:20vh ;
+    display: flex;
+    justify-content: center;
+    background-image: linear-gradient(to left,white,rgb(202, 202, 202));
+}
+.textfile{
+    margin: 40px;
+    margin-right: 2vw;
+}
+.textfilechoose{
+    display: flex;
+    font-family: 'Kanit', sans-serif;
+}
+input[type=submit]{
+    background-image: linear-gradient(#3345A6 10%,#060940);
+    padding: 5px;
+    border: 2px solid #3345A6;
+    border-radius: 3px;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: 2px 2px 10px black ;
+    color: #F2F2F2;
+}
+input[type=submit]:hover{
+    background-image: linear-gradient(#f2f2f2,#f2f2f2);
+    padding: 5px;
+    border: 2px solid #3345A6;
+    border-radius: 3px;
+    font-family: 'Kanit', sans-serif;
+    box-shadow: 5px 5px 10px black ;
+    color: #3345A6;
+    font-weight: bold;
+}
+input[type=text]{
+    height: 25px;
+    width: 25vw;
+}
+
+input[type=file]{
+    color: #060940;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    width: 15vw;
+}
+button[type=button]{
+    width: 7vw;
+    background-image: linear-gradient(to bottom right,#A68A56 25% 75%,#592520 );
+    /* background-color: #A68A56; */
+    padding: 5px;
+    border: 2px solid #592520;
+    border-radius: 3px;
+    font-family: 'Kanit', sans-serif;
+    color: #592520;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px black ;
+}
+button[type=button]:hover{
+    width: 7vw;
+    background-image: linear-gradient(to bottom right,#592520 25% 75%,#A68A56);
+    /* background-color: #592520; */
+    padding: 5px;
+    border: 2px solid #592520;
+    border-radius: 3px;
+    font-family: 'Kanit', sans-serif;
+    color: #A68A56;
+    font-weight: bold;
+    box-shadow: 5px 5px 10px black ;
+}
+.textbox{
+    display: flex;
+    font-family: 'Kanit', sans-serif;
+    margin: 40px;
+    margin-left: 2vw;
+}
+.text{
+    height: 5vh;
+    font-family: 'Kanit', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    /* background-color: #BF826B; */
+    background-image: linear-gradient(45deg, #BF826B ,#F2CFBB);
+}
+
+select {
+        appearance: none;
+        outline: 0;
+        background: #eeeeee;
+        background-image: none;
+        width: 72%;
+        height: 50%;
+        color: black;
+        cursor: pointer;
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+     
+.select {
+        position: relative;
+        display: block;
+        width: 25em;
+        height: 1em;
+        line-height: 3;
+        overflow: hidden;
+        border-radius: .25em;
+        padding-bottom: 5px;
+    }
+
+.videoupload{
+    display: flex;
+    justify-content: center;
+    height: 20vh;
+    background-image: linear-gradient(to right,white,rgb(202, 202, 202));
+    border-bottom: 3px dashed rgb(110, 110, 110);
+    border-top: 3px dashed rgb(110, 110, 110);
+}
+.videofile{
+    display: flex;
+    
+    margin: 40px;
+    font-family: 'Kanit', sans-serif;
+}
+.voice{
+    display: flex;
+    margin-left: 5vw;
+    margin: 40px;
+}
+.video{
+    display: flex;
+    margin-right: 5vw;
+}
+.preview{
+    display: flex;
+    justify-content: center;
+    color: #F2F2F2;
+}
+.verybottom{
+    height: 9.5vh;
+    background-image: repeating-linear-gradient(0deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(67.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(157.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(0deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(112.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),repeating-linear-gradient(22.5deg, hsla(83,0%,53%,0.03) 0px, hsla(83,0%,53%,0.03) 1px,transparent 1px, transparent 12px),linear-gradient(90deg, #282b36,#101526);
+    /* background-color: #101526; */
+    padding: 2vh;
+    border-top: 2px solid #3d4eab;
+    box-shadow: 0px -3px 20px black;
+}
+
+
+</style>
+</head>
+<body>
+<div class="top">
+    <div class="Header">Spoken Tutorial Maker</div>
+</div>
+<div class="bottom">
+<div class="textupload" id="textupload">
+    <div class="textfile" id="textfile">
+        <form id="upload-form" class="upload-form" action="/Site/upload" method="POST" enctype="multipart/form-data">{% csrf_token %}
+            <div class="textfilechoose">
+                <strong>Text File :&nbsp</strong><br>
+                <input id="file-picker" type="file" name="file" accept="text/*"></input>
+            <div id="msg"></div>
+                <input type="submit" value="Upload!" id="upload-button"></input>
+            </div>
+        </form>
+    </div>
+    
+    <div class="textbox">
+        <p>| <b><i> Or Type your text here--> &nbsp</i></b></p>
+        <form action="/Site/upload" method = "POST">{% csrf_token %}
+            <input type="text" name ="text">
+            <input type="submit">
+        </form>
+    </div>
+</div>
+
+
+<div class="videoupload">
+    <div class="voice">
+        <form action="/Site/voice" method="get">
+        <select name="dropdown">
+            <option selected="selected" disabled>Choose the Voice Type:</option>
+                    <option value="m">Male</option>
+                    <option value="f">Female</option>
+        </select>
+        <input type="submit" value="Select">
+        </form>
+    </div>   
+
+    <form id="upload-form" action="/Site/video" method="POST" enctype="multipart/form-data">{% csrf_token %}
+        <div class="videofile">
+            <strong>Video File :&nbsp</strong><br>
+            <input id="video-picker" type="file" name="file" accept="video/*">
+            <div id="msg"></div>
+            <input type="submit" value="Upload!" id="upload-button">  
+        </div>  
+    </form>
+
+</div>
+
+<div class="text">
+    <pre>{{ content_u }}</pre> 
+    <pre>{{ content_t }}</pre>  
+</div>
+<div class="verybottom">
+<div class="preview">
+    <p><b>{{ preview }} &nbsp</b></p>
+    <form method = "POST" action="/Site/upload/preview" >{% csrf_token %}
+        <input type="submit" value="MERGE" name="preview"/>
+    </form>
+</div>
+</div>
+</div>
+
+</body>
+
+<!-- Script for checking the file format and shows if the File is Supported -->
+<script>
+
+    $("#textupload #textfile #file-picker").change(function(){
+
+        var input = document.getElementById('file-picker');
+
+        for (var i=0; i<input.files.length; i++)
+        {
+            var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+            if (ext == 'txt')
+            {
+                $("#msg").text("Files are supported")
+            }
+            else
+            {
+                $("#msg").text("Files are NOT supported")
+                document.getElementById("file-picker").value ="";
+            }
+
+        }
+
+    } );
+
+    $("#video-picker").change(function(){
+
+var input = document.getElementById('video-picker');
+
+for (var i=0; i<input.files.length; i++)
+{
+    var ext= input.files[i].name.substring(input.files[i].name.lastIndexOf('.')+1).toLowerCase()
+
+    if (ext == 'mp4')
+    {
+        $("#msg").text("Files are supported")
+    }
+    else
+    {
+        $("#msg").text("Files are NOT supported")
+        document.getElementById("video-picker").value ="";
+    }
+
+}
+} );
+
+</script>
+</html>
